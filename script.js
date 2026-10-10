@@ -11,7 +11,7 @@ const PROJECTS = [
     title: "Online Bookstore — UI/UX Training Case Study",
     tagline: "A full research-to-prototype UI/UX project: personas, information architecture, and two high-fidelity design explorations.",
     tags: ["User Research", "Personas", "Information Architecture", "High-Fidelity Prototyping"],
-    thumb: B + "thumbnail.png",
+    thumb: B + "thumbnail.webp",
     thumbGradient: "linear-gradient(135deg, var(--c-pink), var(--c-peach))",
     sections: [
       {
@@ -22,12 +22,12 @@ const PROJECTS = [
         title: "Research",
         text: "I interviewed 4 users and built personas from those conversations, then widened the research with a 5Ws survey (who, what, when, where, why) to check the personas against a larger group. Together, the interviews and survey shaped who I was designing for and what they needed from the homepage.",
         images: [
-          { src: B + "screenshotfromtheservay1.png", caption: "The 5Ws survey" },
-          { src: B + "screenshotofresponsesexel2.png", caption: "Survey responses in a spreadsheet" },
-          { src: B + "persona(1).jpg", caption: "Persona" },
-          { src: B + "personaexample3.jpg", caption: "Persona" },
-          { src: B + "persona(3).jpg", caption: "Persona" },
-          { src: B + "persona(4).jpg", caption: "Persona" }
+          { src: B + "screenshotfromtheservay1.webp", caption: "The 5Ws survey" },
+          { src: B + "screenshotofresponsesexel2.webp", caption: "Survey responses in a spreadsheet" },
+          { src: B + "persona(1).webp", caption: "Persona" },
+          { src: B + "personaexample3.webp", caption: "Persona" },
+          { src: B + "persona(3).webp", caption: "Persona" },
+          { src: B + "persona(4).webp", caption: "Persona" }
         ],
         links: [{ href: B + "uxservayReport.pdf", label: "Read the full survey report (PDF)" }]
       },
@@ -35,17 +35,17 @@ const PROJECTS = [
         title: "Design process",
         text: "From the research, I built the site's information architecture and a full sitemap before touching any visuals. The homepage then moved through three fidelity stages in Photoshop — low-fidelity, mid-fidelity, and a polished high-fidelity design. For the interactive layer, I designed the primary button in Illustrator with its default, hover, and clicked states, and built a short animated “coming soon” screen in Photoshop.",
         images: [
-          { src: B + "sitemapandiaofhomepage4.png", caption: "Information architecture and sitemap" },
-          { src: B + "BookStoreLoFHomePage5.png", caption: "Low-fidelity homepage" },
-          { src: B + "BookStoreMFHomePage6.png", caption: "Mid-fidelity homepage" }
+          { src: B + "sitemapandiaofhomepage4.webp", caption: "Information architecture and sitemap" },
+          { src: B + "BookStoreLoFHomePage5.webp", caption: "Low-fidelity homepage" },
+          { src: B + "BookStoreMFHomePage6.webp", caption: "Mid-fidelity homepage" }
         ]
       },
       {
         title: "Prototype",
         text: "Two high-fidelity directions for the homepage: one in Photoshop, and a separate exploration in Adobe XD that tests an alternate layout and color direction.",
         images: [
-          { src: B + "BookStoreHFHomePage7ps.png", caption: "High-fidelity homepage (Photoshop)" },
-          { src: B + "HomepageXDanotherdesign.png", caption: "Alternate high-fidelity design (Adobe XD)" }
+          { src: B + "BookStoreHFHomePage7ps.webp", caption: "High-fidelity homepage (Photoshop)" },
+          { src: B + "HomepageXDanotherdesign.webp", caption: "Alternate high-fidelity design (Adobe XD)" }
         ]
       },
       {
@@ -60,32 +60,32 @@ const PROJECTS = [
     title: "Garden Website — Homepage Design",
     tagline: "A homepage design for a garden website, with animated cards, hero section and footer.",
     tags: ["Homepage Design", "Adobe XD", "Animation"],
-    thumb: G + "thumbnail.png",
+    thumb: G + "thumbnail.webp",
     thumbGradient: "linear-gradient(135deg, var(--c-sage), var(--c-peach))",
     sections: [
       {
         title: "Homepage design",
         text: "A homepage for a garden website, designed in Adobe XD: a hero section with a call-to-action button, “Available gardens” cards, an “Our service” section, and a footer.",
         images: [
-          { src: G + "Home page.png", caption: "The homepage" },
-          { src: G + "mokeup.jpg", caption: "Website mockup" }
+          { src: G + "Home page.webp", caption: "The homepage" },
+          { src: G + "mokeup.webp", caption: "Website mockup" }
         ]
       },
       {
         title: "Motion",
         text: "Animations designed for the hero section and call-to-action button, the garden cards, the service cards, and the footer.",
         images: [
-          { src: G + "showsanimationinherosectionandctabtn.png", caption: "Animation: hero section and call-to-action button" },
-          { src: G + "showsanimationingardencards.png", caption: "Animation: garden cards" },
-          { src: G + "showsanimationincardsandourservices.png", caption: "Animation: cards and “Our service” section" },
-          { src: G + "showsanimationinfooter.png", caption: "Animation: footer" }
+          { src: G + "showsanimationinherosectionandctabtn.webp", caption: "Animation: hero section and call-to-action button" },
+          { src: G + "showsanimationingardencards.webp", caption: "Animation: garden cards" },
+          { src: G + "showsanimationincardsandourservices.webp", caption: "Animation: cards and “Our service” section" },
+          { src: G + "showsanimationinfooter.webp", caption: "Animation: footer" }
         ]
       },
       {
         title: "In progress",
         text: "The sign-in screen is still being designed.",
         images: [
-          { src: G + "ongoingsigninmiffed.jpg", caption: "Sign-in screen (work in progress)" }
+          { src: G + "ongoingsigninmiffed.webp", caption: "Sign-in screen (work in progress)" }
         ]
       }
     ],
