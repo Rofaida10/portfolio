@@ -46,19 +46,6 @@ const PROJECTS = [
   },
   {
     category: "code",
-    title: "Blue Light Protective Film — Patented Prototype",
-    tagline: "A patented hardware prototype recognized at BASEF24 and IEEE YESIST12.",
-    tags: ["Hardware", "Patent", "Research"],
-    thumbGradient: "linear-gradient(135deg, var(--c-peach), var(--c-mauve))",
-    problem: "Placeholder — describe the everyday problem the blue-light protective film addresses.",
-    research: "Placeholder — summarize the testing or research behind the film's material and design choices.",
-    process: "Placeholder — describe how the prototype was developed and refined ahead of competition.",
-    prototype: "N/A — physical hardware prototype.",
-    impact: "Awarded the BASEF24 Silver Medal and reached the IEEE YESIST12 international finals in Tunisia.",
-    link: null
-  },
-  {
-    category: "code",
     title: "Machine Learning Foundations — IEEE SSCS AUSC",
     tagline: "From-scratch machine learning work: derivations, implementations, and applied modeling.",
     tags: ["Python", "Machine Learning", "IEEE SSCS"],
