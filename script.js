@@ -297,16 +297,47 @@ document.addEventListener("keydown", e => {
   if (e.key === "Escape") closeDrawer();
 });
 
-// ============ CONTACT FORM (mailto fallback) ============
-document.getElementById("contactForm").addEventListener("submit", (e) => {
+// ============ CONTACT FORM (sends directly via FormSubmit, free, no API key) ============
+const CONTACT_EMAIL = "rofaidayousry00@gmail.com";
+const contactForm = document.getElementById("contactForm");
+const formNote = document.getElementById("formNote");
+const defaultNote = formNote.textContent;
+
+contactForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const form = e.target;
-  const name = form.name.value;
-  const email = form.email.value;
-  const message = form.message.value;
-  const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
-  const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-  window.location.href = `mailto:rofaidayousry00@gmail.com?subject=${subject}&body=${body}`;
+  const btn = form.querySelector("button[type=submit]");
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  const message = form.message.value.trim();
+
+  btn.disabled = true;
+  btn.textContent = "Sending…";
+  formNote.textContent = "";
+
+  try {
+    const res = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        name, email, message,
+        _subject: `Portfolio inquiry from ${name}`,
+        _replyto: email,
+        _template: "table"
+      })
+    });
+    const data = await res.json();
+    if (!res.ok || !(data.success === true || data.success === "true")) throw new Error(data.message || "Send failed");
+    form.reset();
+    formNote.textContent = "Thanks! Your message was sent. I'll reply by email soon.";
+  } catch (err) {
+    const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
+    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+    formNote.innerHTML = `Couldn't send the message. Please email me directly at <a href="mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}">${CONTACT_EMAIL}</a>.`;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "Send message";
+  }
 });
 
 // ============ FOOTER YEAR ============
