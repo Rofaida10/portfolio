@@ -2,7 +2,7 @@
 
 I'm Rofaida, a UI/UX designer + CS student (Ai/ML focused).
 
-I design stuff that actually makes sense for the people using it, and I code and make Ai models too, so it all comes together.
+I design stuff that actually makes sense for the people using it, write code, and build AI models too, so it all comes together.
 
 go look around, the case studies are the good part
 → https://rofaida10.github.io/portfolio/
