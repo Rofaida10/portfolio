@@ -1,11 +1,35 @@
-/* Project images inside the case study drawer */
-.drawer-figures{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:16px 0 4px;}
-.drawer-figures figure{margin:0;}
-.drawer-figures img{width:100%; height:auto; display:block; border-radius:10px; border:1px solid var(--border);}
+/* Case study: large centered panel, one image per row */
+.drawer{
+  top:3vh; right:auto; left:50%; height:94vh; width:min(1040px, 94vw);
+  border-radius:20px; box-shadow:0 30px 80px rgba(0,0,0,.45);
+  transform:translate(-50%, 28px); opacity:0; visibility:hidden;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1), opacity .25s ease, visibility 0s linear .35s;
+}
+.drawer.is-open{
+  transform:translate(-50%, 0); opacity:1; visibility:visible;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1), opacity .25s ease, visibility 0s;
+}
+.drawer-content{max-width:900px; margin:0 auto; padding:0 clamp(22px, 5vw, 64px) 80px;}
+.drawer-content h2{font-size:clamp(1.9rem, 4vw, 2.6rem);}
+.drawer-block{margin-bottom:56px;}
+.drawer-block h4{font-size:.9rem; margin-bottom:14px;}
+
+.drawer-figures{display:flex; flex-direction:column; gap:48px; margin:28px 0 8px;}
+.drawer-figures figure{margin:0; text-align:center;}
 .drawer-figures a{display:block;}
-.drawer-figures figcaption{font-size:.82rem; margin-top:6px; opacity:.8;}
-.drawer-block .drawer-external{margin-top:14px;}
-@media (max-width:600px){ .drawer-figures{grid-template-columns:1fr;} }
+.drawer-figures img{
+  display:block; width:auto; max-width:100%; height:auto; margin:0 auto;
+  border-radius:12px; border:1px solid var(--border);
+  box-shadow:0 10px 30px -12px rgba(0,0,0,.3);
+}
+.drawer-figures figcaption{font-size:.92rem; margin-top:12px; opacity:.85;}
+.drawer-block .drawer-external{margin-top:20px;}
+
+@media (max-width:720px){
+  .drawer{top:0; left:0; width:100%; height:100%; border-radius:0; transform:translateY(28px);}
+  .drawer.is-open{transform:translateY(0);}
+  .drawer-figures{gap:36px;}
+}
 
 /* Hero portrait: arch-shaped photo with soft circles behind it */
 .hero-portrait{position:relative; width:100%; max-width:340px; aspect-ratio:4/5; margin:0 auto;}
