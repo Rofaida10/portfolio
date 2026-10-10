@@ -307,9 +307,10 @@ contactForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const form = e.target;
   const btn = form.querySelector("button[type=submit]");
-  const name = form.name.value.trim();
-  const email = form.email.value.trim();
-  const message = form.message.value.trim();
+  const fd = new FormData(form);
+  const name = String(fd.get("name") || "").trim();
+  const email = String(fd.get("email") || "").trim();
+  const message = String(fd.get("message") || "").trim();
 
   btn.disabled = true;
   btn.textContent = "Sending…";
@@ -326,14 +327,16 @@ contactForm.addEventListener("submit", async (e) => {
         _template: "table"
       })
     });
-    const data = await res.json();
+    const data = await res.json().catch(() => ({}));
     if (!res.ok || !(data.success === true || data.success === "true")) throw new Error(data.message || "Send failed");
     form.reset();
-    formNote.textContent = "Thanks! Your message was sent. I'll reply by email soon.";
+    formNote.textContent = "Thanks! Your message was sent.";
   } catch (err) {
+    console.error("Contact form error:", err);
     const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
     const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-    formNote.innerHTML = `Couldn't send the message. Please email me directly at <a href="mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}">${CONTACT_EMAIL}</a>.`;
+    const reason = err && err.message ? ` (${err.message})` : "";
+    formNote.innerHTML = `Couldn't send the message${reason}. Please email me directly at <a href="mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}">${CONTACT_EMAIL}</a>.`;
   } finally {
     btn.disabled = false;
     btn.textContent = "Send message";
