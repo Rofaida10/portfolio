@@ -194,12 +194,6 @@ document.addEventListener("keydown", e => {
   if (e.key === "Escape") closeDrawer();
 });
 
-// ============ RESUME BUTTON ============
-document.getElementById("resumeBtn").addEventListener("click", (e) => {
-  e.preventDefault();
-  alert("Add your résumé PDF to the project folder and point this button's href at it (e.g. href=\"resume.pdf\" download).");
-});
-
 // ============ CONTACT FORM (mailto fallback) ============
 document.getElementById("contactForm").addEventListener("submit", (e) => {
   e.preventDefault();
